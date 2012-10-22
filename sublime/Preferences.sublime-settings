@@ -1,47 +1,20 @@
-// NOTE! This is symlinked from settings/sublime/Preferences.sublime-settings
-// If you opened this from Sublime's Preferences menu, you will be opening the
-// symlinked one. If you save it, it will break the symlink. Instead, make any
-// changes to the real file in settings/sublime/.
-
 {
-    // Note that the font_face and font_size are overriden in the platform
-    // specific settings file, for example, "Preferences (Linux).sublime-settings".
-    // Because of this, setting them here will have no effect: you must set them
-    // in your User File Preferences.
-    "font_face": "Source Code Pro",
-    "font_size": 12,
-
-    // Spacing between the gutter and the text
-    "margin": 4,
-
-    // Fold buttons are the triangles shown in the gutter to fold regions of text
-    "fold_buttons": false,
-
-    // Columns in which to display vertical rulers
-    "rulers": [80],
-
-    // The number of spaces a tab is considered equal to
-    "tab_size": 2,
-
-    // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": true,
-
-    // Controls how the indent guides are drawn, valid options are
-    // "draw_normal" and "draw_active". draw_active will draw the indent
-    // guides containing the caret in a different color.
-    "indent_guide_options": ["draw_active"],
-
-    // Set to true to removing trailing white space on save
-    "trim_trailing_white_space_on_save": true,
-
-    // Set to true to ensure the last line of the file ends in a newline
-    // character when saving
-    "ensure_newline_at_eof_on_save": true,
-
-    // By default, shift+tab will only unindent if the selection spans
-    // multiple lines. When pressing shift+tab at other times, it'll insert a
-    // tab character - this allows tabs to be inserted when tab_completion is
-    // enabled. Set this to true to make shift+tab always unindent, instead of
-    // inserting tabs.
-    "shift_tab_unindent": true
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"fold_buttons": false,
+	"font_face": "Source Code Pro",
+	"font_size": 12,
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"margin": 4,
+	"rulers":
+	[
+		80
+	],
+	"shift_tab_unindent": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
 }

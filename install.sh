@@ -15,8 +15,14 @@ echo "Symlinking Sublime settings..."
 # modify this, just run install.sh again to poke Sublime into reloading it.
 ln -fs $PWD/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
 
+echo "Symlinking .ackrc..."
+ln -fs $PWD/dotfiles/.ackrc ~/.ackrc
+
 echo "Installing git bash completion..."
 brew install git bash-completion
 
 # Run the new .bash_profile.
 source ~/.bash_profile
+
+echo "Installing ack..."
+brew install ack
