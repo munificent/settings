@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -r /Users/rnystrom/dev/dart/dart/xcodebuild/ReleaseIA32/dart-sdk && \
+      /Users/rnystrom/dev/dart/dart/tools/build.py -m release create_sdk

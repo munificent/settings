@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# Runs various tests in the Dart repo. This has a few ways it can be run:
+#
+# $ tst                    Runs all pub and pkg tests
+# $ tst pub                Runs all pub tests
+# $ tst pub/<test>_test    Runs a specific pub test file
+# $ tst pub/<selector>     Runs pub tests matching <selector>
+# $ tst pkg                Runs all pkg tests
+# $ tst <pkg>              Runs all tests for <pkg>
+# $ tst <pkg> <test>       Runs a specific pkg test file
+# $ tst <pkg>/<selector>   Runs tests for <pkg> matching <selector>
+
+SDK="/Users/rnystrom/dev/dart/dart"
+TEST_RUNNER="$SDK/tools/test.py -m release --checked --progress=color"
+TEST_FILE="$SDK/xcodebuild/ReleaseIA32/dart-sdk/bin/dart --checked
+    --package-root=$SDK/xcodebuild/ReleaseIA32/packages/"
+
+if [[ $# -eq 0 ]]
+then
+  # If no arguments, just run pub and pkg tests.
+  echo "Running pub tests..."
+  $TEST_RUNNER pub
+  echo "Running pkg tests..."
+  $TEST_RUNNER pkg
+elif [[ $1 == pub ]]
+then
+
+  if [[ $# -eq 1 ]]
+  then
+    # If no other arguments, just run pub tests.
+    echo "Running pub tests..."
+    $TEST_RUNNER pub
+  elif [[ $2 == *_test ]]
+  then
+    # Given an explicit test suite, so run it.
+    $TEST_FILE $SDK_ROOT/sdk/lib/_internal/pub/test/${1}.dart
+  else
+    # Otherwise, assume it's a selector.
+    $TEST_RUNNER pub/${1}
+  fi
+
+elif [[ $1 == pkg ]]
+then
+
+    # If no arguments, just run all pkg tests.
+    echo "Running pkg tests..."
+    $TEST_RUNNER pkg
+
+else
+
+  if [[ $# -eq 2 ]]
+  then
+    echo "suite"
+    # Given an explicit test suite, so run it.
+    $TEST_FILE $SDK/pkg/${1}/test/${2}.dart
+  else
+    # Otherwise, run the package's whole test suite.
+    $TEST_RUNNER pkg/${1}
+  fi
+
+fi

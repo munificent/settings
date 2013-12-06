@@ -9,6 +9,9 @@ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 echo "Symlinking .bash_profile..."
 ln -fs $PWD/dotfiles/.bash_profile ~/.bash_profile
 
+echo "Symlinking .gitconfig..."
+ln -fs $PWD/dotfiles/.gitconfig ~/.gitconfig
+
 echo "Symlinking Sublime settings..."
 # The Sublime settings. Note: because this symlinks to the real file here,
 # Sublime won't correctly see any changes made to it and refresh itself. If you

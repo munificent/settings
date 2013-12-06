@@ -1,0 +1,14 @@
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  grep = auto
+[user]
+	name = Bob Nystrom
+	email = robert@stuffwithstuff.com
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/rnystrom/.gitignore_global
+[alias]
+  nathan = cl upload --reviewers=nweiz@google.com --send-mail

@@ -1,9 +1,25 @@
 {
+	"alignment_chars":
+	[
+		"=",
+		"//"
+	],
+	"alignment_space_chars":
+	[
+		"=",
+		"//"
+	],
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-	"ensure_newline_at_eof_on_save": true,
+	"dartsdk_path": "~/dev/dart/dart/xcodebuild/ReleaseIA32/dart-sdk",
+	"enable_live_count": false,
 	"fold_buttons": false,
 	"font_face": "Source Code Pro",
 	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"indent_guide_options":
 	[
 		"draw_active"
