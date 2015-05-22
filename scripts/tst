@@ -4,17 +4,17 @@
 #
 # $ tst                    Runs all pub and pkg tests
 # $ tst pub                Runs all pub tests
-# $ tst pub/<test>_test    Runs a specific pub test file
-# $ tst pub/<selector>     Runs pub tests matching <selector>
+# $ tst pub <test>_test    Runs a specific pub test file
+# $ tst pub <selector>     Runs pub tests matching <selector>
 # $ tst pkg                Runs all pkg tests
 # $ tst <pkg>              Runs all tests for <pkg>
 # $ tst <pkg> <test>       Runs a specific pkg test file
 # $ tst <pkg>/<selector>   Runs tests for <pkg> matching <selector>
 
-SDK="/Users/rnystrom/dev/dart/dart"
-TEST_RUNNER="$SDK/tools/test.py -m release --checked --progress=color"
-TEST_FILE="$SDK/xcodebuild/ReleaseIA32/dart-sdk/bin/dart --checked
-    --package-root=$SDK/xcodebuild/ReleaseIA32/packages/"
+REPO="/Users/rnystrom/dev/dart/dart"
+TEST_RUNNER="$REPO/tools/test.py -m release --checked --progress=color"
+TEST_FILE="$REPO/xcodebuild/ReleaseIA32/dart-sdk/bin/dart --checked
+    --package-root=$REPO/xcodebuild/ReleaseIA32/packages/"
 
 if [[ $# -eq 0 ]]
 then
@@ -34,10 +34,10 @@ then
   elif [[ $2 == *_test ]]
   then
     # Given an explicit test suite, so run it.
-    $TEST_FILE $SDK_ROOT/sdk/lib/_internal/pub/test/${1}.dart
+    $TEST_FILE $REPO/sdk/lib/_internal/pub/test/${2}.dart
   else
     # Otherwise, assume it's a selector.
-    $TEST_RUNNER pub/${1}
+    $TEST_RUNNER pub/${2}
   fi
 
 elif [[ $1 == pkg ]]
@@ -51,9 +51,8 @@ else
 
   if [[ $# -eq 2 ]]
   then
-    echo "suite"
     # Given an explicit test suite, so run it.
-    $TEST_FILE $SDK/pkg/${1}/test/${2}.dart
+    $TEST_FILE $REPO/pkg/${1}/test/${2}.dart
   else
     # Otherwise, run the package's whole test suite.
     $TEST_RUNNER pkg/${1}

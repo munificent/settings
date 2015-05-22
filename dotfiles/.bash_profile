@@ -11,7 +11,10 @@ export PATH="$PATH":~/dev/settings/scripts
 export PATH="$PATH":~/dev/depot_tools
 
 # Add Dart repo's SDK to path.
-export PATH="$PATH":~/dev/dart/dart/sdk/bin
+export PATH="$PATH":~/dev/dart/sdk/bin
+
+# Add pub binstubs to path.
+export PATH="$PATH":~/.pub-cache/bin
 
 # Add bash completion for git.
 # See: https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
@@ -48,6 +51,3 @@ complete -o default -o nospace -F _jump jump
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export PS1='\[\033[37m\]\w$(__git_ps1 " \[\033[32m\](%s)")\[\033[0m\] → '
-
-# Load RVM into a shell session *as a function*.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

@@ -1,0 +1,7 @@
+- Install Source Code Pro
+  https://github.com/adobe-fonts/source-code-pro
+
+- Copy Xcode color themes
+  from: preferences/xcode/
+  to: ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+  Create that folder if it doesn't exist

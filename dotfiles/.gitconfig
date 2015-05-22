@@ -4,11 +4,17 @@
   status = auto
   grep = auto
 [user]
-	name = Bob Nystrom
-	email = robert@stuffwithstuff.com
+  name = Bob Nystrom
+  email = robert@stuffwithstuff.com
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [core]
-	excludesfile = /Users/rnystrom/.gitignore_global
-[alias]
-  nathan = cl upload --reviewers=nweiz@google.com --send-mail
+  excludesfile = /Users/rnystrom/.gitignore_global
+[push]
+  default = simple
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
