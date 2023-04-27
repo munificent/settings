@@ -17,6 +17,7 @@ echo "Symlinking Sublime settings..."
 # Sublime won't correctly see any changes made to it and refresh itself. If you
 # modify this, just run install.sh again to poke Sublime into reloading it.
 ln -fs $PWD/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+ln -fs $PWD/sublime/Slate.sublime-color-scheme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Slate.sublime-color-scheme
 
 echo "Symlinking .ackrc..."
 ln -fs $PWD/dotfiles/.ackrc ~/.ackrc

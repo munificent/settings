@@ -1,0 +1,243 @@
+{
+  "name": "Slate",
+  "variables": {
+    "dark": "#232830",
+    "light": "#dfe1e8",
+
+    "green": "#8eb362",
+    "aqua": "#58aaae",
+    "blue": "#577cb9",
+    "mauve": "#ab77b5",
+    "red": "#c66553",
+    "orange": "#e18c5e",
+    "yellow": "#cfa95e",
+
+    "blue-aqua": "color(var(blue) blend(var(aqua) 50%))",
+    "orange-red": "color(var(orange) blend(var(red) 50%))",
+    "yellow-orange": "color(var(yellow) blend(var(orange) 50%))",
+    "yellow-green": "color(var(yellow) blend(var(green) 50%))",
+
+    "gray-1": "color(var(dark) blend(var(light) 98%))",
+    "gray-2": "color(var(dark) blend(var(light) 95%))",
+    "gray-3": "color(var(dark) blend(var(light) 85%))",
+    "gray-4": "color(var(dark) blend(var(light) 70%))",
+    "gray-5": "color(var(dark) blend(var(light) 60%))",
+    "gray-6": "color(var(dark) blend(var(light) 50%))",
+    "gray-7": "color(var(dark) blend(var(light) 20%))",
+    "gray-8": "color(var(dark) blend(var(light) 10%))",
+  },
+  "globals": {
+    "background": "var(gray-1)",
+    "foreground": "var(gray-7)",
+    "caret": "var(light)",
+    "line_highlight": "var(gray-2)",
+    "gutter_foreground": "var(gray-3)",
+    "selection": "var(gray-3)",
+    "active_guide": "var(gray-3)",
+
+    "bracket_foreground": "var(light)",
+    "bracket_contents_foreground": "var(light)",
+
+    "comment": "var(gray-3)",
+  },
+  "rules": [
+    // Comments.
+    {
+      "scope": "comment",
+      "foreground": "color(var(gray-3) blend(var(blue) 60%)"
+    },
+    {
+      "scope": "comment.line.documentation",
+      "foreground": "color(var(gray-5) blend(var(blue) 60%)"
+    },
+    {
+      "scope": "comment.block.documentation",
+      "foreground": "color(var(gray-5) blend(var(blue) 60%)"
+    },
+    {
+      "scope": "punctuation.definition.comment",
+      "foreground": "color(var(gray-2) blend(var(blue) 70%)"
+    },
+    // Punctuation and operators.
+    {
+      "scope": "punctuation",
+      "foreground": "var(gray-6)"
+    },
+    {
+      "scope": "keyword.operator",
+      "foreground": "color(var(blue) blend(var(gray-6) 50%)"
+    },
+    // Keywords.
+    {
+      "scope": "keyword",
+      "foreground": "var(blue)"
+    },
+    {
+      "scope": "storage",
+      "foreground": "var(blue)"
+    },
+    {
+      "scope": "variable.language",
+      "foreground": "var(blue-aqua)"
+    },
+    {
+      "scope": "variable.other.constant",
+      "foreground": "color(var(red) blend(var(mauve) 50%))"
+    },
+    // Entities.
+    {
+      "scope": "support",
+      "foreground": "var(mauve)"
+    },
+    {
+      "scope": "variable",
+      "foreground": "var(aqua)"
+    },
+    // Tags.
+    {
+      "scope": "punctuation.definition.tag",
+      "foreground": "color(var(green) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "entity.name.tag",
+      "foreground": "var(green)"
+    },
+    {
+      "scope": "meta.tag",
+      "foreground": "color(var(green) blend(var(gray-1) 75%))"
+    },
+    // Constants.
+    {
+      "scope": "constant",
+      "foreground": "var(yellow)"
+    },
+    {
+      "scope": "constant.numeric",
+      "foreground": "var(orange-red)"
+    },
+    {
+      "scope": "string",
+      "foreground": "var(orange)"
+    },
+    {
+      "scope": "punctuation.definition.string",
+      "foreground": "color(var(orange) blend(var(gray-1) 50%))"
+    },
+    {
+      // "r" in Python raw string like r"...".
+      "scope": "storage.type.string",
+      "foreground": "color(var(orange) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "constant.character.escape",
+      "foreground": "color(var(yellow-orange))"
+    },
+
+    // === Python
+    // "{...}" placeholder in format string.
+    {
+      "scope": "punctuation.definition.placeholder",
+      "foreground": "color(var(orange) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "keyword.operator.quantifier.regexp",
+      "foreground": "color(var(orange) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "punctuation.definition.group.begin.regexp",
+      "foreground": "color(var(orange) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "punctuation.definition.group.end.regexp",
+      "foreground": "color(var(orange) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "punctuation.definition.character-class.begin.regexp",
+      "foreground": "color(var(yellow-orange) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "punctuation.definition.character-class.end.regexp",
+      "foreground": "color(var(yellow-orange) blend(var(gray-1) 50%))"
+    },
+
+    // === Markdown ===
+    // Headings.
+    {
+      "scope": "markup.heading",
+      "foreground": "var(yellow)",
+    },
+    {
+      "scope": "punctuation.definition.heading",
+      "foreground": "color(var(yellow) blend(var(gray-1) 50%))"
+    },
+    // Italic.
+    {
+      "scope": "markup.italic",
+      "font_style": "italic",
+      "foreground": "var(gray-8)",
+    },
+    {
+      "scope": "punctuation.definition.italic",
+      "foreground": "var(gray-4)"
+    },
+    // Bold.
+    {
+      "scope": "markup.bold",
+      "font_style": "bold",
+      "foreground": "var(light)",
+    },
+    {
+      "scope": "punctuation.definition.bold",
+      "foreground": "var(gray-6)"
+    },
+    // Blockquote.
+    {
+      "scope": "markup.quote",
+      "foreground": "var(aqua)"
+    },
+    // Lists.
+    {
+      "scope": "markup.list",
+      "foreground": "var(blue)"
+    },
+    {
+      "scope": "meta.paragraph.list",
+      "foreground": "var(gray-7)"
+    },
+    {
+      "scope": "punctuation.definition.list_item",
+      "foreground": "var(blue)"
+    },
+    // Code.
+    {
+      "scope": "punctuation.definition.raw",
+      "foreground": "color(var(mauve) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "markup.raw",
+      "foreground": "var(mauve)"
+    },
+    // Links.
+    {
+      "scope": "meta.link",
+      "foreground": "var(aqua)"
+    },
+    {
+      "scope": "punctuation.definition",
+      "foreground": "color(var(aqua) blend(var(gray-1) 50%))"
+    },
+    {
+      "scope": "punctuation.separator.key-value.markdown",
+      "foreground": "color(var(aqua) blend(var(gray-1) 50%))"
+    },
+    // Rule.
+    {
+      "scope": "punctuation.definition.thematic-break",
+      "foreground": "var(orange)",
+    },
+    {
+      "scope": "meta.separator",
+      "foreground": "var(orange)",
+    },
+  ]
+}
